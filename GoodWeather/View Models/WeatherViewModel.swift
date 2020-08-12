@@ -11,6 +11,7 @@ import Foundation
 class WeatherViewModel: ObservableObject {
     
     @Published private var weather: Weather?
+    @Published var message: String = ""
     
     var temperature: Double {
         guard let temp = weather?.temp else {
@@ -19,16 +20,23 @@ class WeatherViewModel: ObservableObject {
         return temp
     }
     
-    func fetchWeather() {
+    func fetchWeather(city: String) {
         
-        WeatherService().getWeather { result in
+        guard let city = city.escaped() else {
+            fatalError("URL is invalid!")
+        }
+        
+        WeatherService().getWeather(city: city) { result in
             switch result {
                 case .success(let weather):
                     DispatchQueue.main.async {
-                         self.weather = weather
+                        self.weather = weather
                     }
                 case .failure(_ ):
-                    print("error")
+                    DispatchQueue.main.async {
+                        self.message = "Unable to find weather"
+                        self.weather = nil
+                }
             }
         }
         

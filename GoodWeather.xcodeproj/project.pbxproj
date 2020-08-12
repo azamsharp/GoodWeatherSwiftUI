@@ -17,6 +17,7 @@
 		8D1FD42B24E36CFA003F4D6A /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1FD42A24E36CFA003F4D6A /* WeatherService.swift */; };
 		8D1FD42E24E36D5F003F4D6A /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1FD42D24E36D5F003F4D6A /* URL+Extensions.swift */; };
 		8D1FD43124E36E6F003F4D6A /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1FD43024E36E6F003F4D6A /* WeatherViewModel.swift */; };
+		8D1FD43324E498E5003F4D6A /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1FD43224E498E5003F4D6A /* String+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		8D1FD42A24E36CFA003F4D6A /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		8D1FD42D24E36D5F003F4D6A /* URL+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
 		8D1FD43024E36E6F003F4D6A /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		8D1FD43224E498E5003F4D6A /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				8D1FD42D24E36D5F003F4D6A /* URL+Extensions.swift */,
+				8D1FD43224E498E5003F4D6A /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 				8D1FD42E24E36D5F003F4D6A /* URL+Extensions.swift in Sources */,
 				8D1FD41324E36B13003F4D6A /* AppDelegate.swift in Sources */,
 				8D1FD43124E36E6F003F4D6A /* WeatherViewModel.swift in Sources */,
+				8D1FD43324E498E5003F4D6A /* String+Extensions.swift in Sources */,
 				8D1FD41524E36B13003F4D6A /* SceneDelegate.swift in Sources */,
 				8D1FD41724E36B13003F4D6A /* ContentView.swift in Sources */,
 				8D1FD42824E36C4B003F4D6A /* WeatherResponse.swift in Sources */,

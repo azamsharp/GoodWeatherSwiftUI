@@ -10,15 +10,24 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @ObservedObject private var weatherVM = WeatherViewModel() 
+    @ObservedObject private var weatherVM = WeatherViewModel()
+    @State private var city: String = ""
     
     var body: some View {
         
-        Text("\(self.weatherVM.temperature)")
-        
-        .onAppear() {
-                self.weatherVM.fetchWeather()
-        }
+        VStack {
+            
+            TextField("Search", text: self.$city, onEditingChanged: { _ in }, onCommit: {
+                // perform a fetch weather using the city name
+                self.weatherVM.fetchWeather(city: self.city)
+                
+            }).textFieldStyle(RoundedBorderTextFieldStyle())
+               
+            Spacer()
+            Text("\(weatherVM.temperature)")
+            Spacer()
+            Text(weatherVM.message)
+        }.padding()
     }
 }
 
