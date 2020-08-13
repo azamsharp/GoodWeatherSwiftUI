@@ -15,24 +15,49 @@ enum LoadingState {
     case failed
 }
 
+enum TemperatureUnit: String, CaseIterable {
+    case fahrenheit
+    case celsius
+}
+
+extension TemperatureUnit {
+    
+    var title: String {
+        switch self {
+            case .fahrenheit:
+                return "Fahrenheit"
+            case .celsius:
+                return "Celsius"
+        }
+    }
+    
+}
+
 class WeatherViewModel: ObservableObject {
     
     @Published private var weather: Weather?
     @Published var message: String = ""
     @Published var loadingState: LoadingState = .none
+    @Published var temperatureUnit: TemperatureUnit = .fahrenheit
     
-    var temperature: Double {
+    var temperature: String {
         guard let temp = weather?.temp else {
-            return 0.0
+            return "N/A"
         }
-        return temp
+        
+        switch temperatureUnit {
+            case .fahrenheit:
+                return String(format: "%.0F F", temp.toFahrenheit())
+            case .celsius:
+                return String(format: "%.0F C", temp.toCelsius())
+        }
     }
     
-    var humidity: Double {
+    var humidity: String {
         guard let humidity = weather?.humidity else {
-            return 0.0
+            return "N/A"
         }
-        return humidity
+        return String(format: "%.0F %%", humidity)
     }
     
     func fetchWeather(city: String) {

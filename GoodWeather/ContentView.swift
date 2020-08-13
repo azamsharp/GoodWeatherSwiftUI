@@ -31,7 +31,7 @@ struct ContentView: View {
             if self.weatherVM.loadingState == .loading {
                 LoadingView()
             } else if self.weatherVM.loadingState == .success {
-                WeatherView(temperature: self.weatherVM.temperature, humidity: self.weatherVM.humidity)
+                WeatherView(weatherVM: self.weatherVM)
             } else if self.weatherVM.loadingState == .failed {
                  ErrorView(message: self.weatherVM.message)
             }
@@ -46,7 +46,7 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         
         let vm = WeatherViewModel()
-        vm.loadingState = .failed
+        vm.loadingState = .none
         vm.message = "Unable to load weather"
         
         return ContentView(weatherVM: vm)
@@ -55,17 +55,23 @@ struct ContentView_Previews: PreviewProvider {
 
 struct WeatherView: View {
     
-    let temperature: Double
-    let humidity: Double
+    @ObservedObject var weatherVM: WeatherViewModel
     
     var body: some View {
         VStack(spacing: 10) {
-            Text("\(temperature)")
+            Text("\(self.weatherVM.temperature)")
                 .font(.largeTitle)
                 .foregroundColor(Color.white)
-            Text("\(humidity)")
+            Text("\(self.weatherVM.humidity)")
                 .foregroundColor(Color.white)
                 .opacity(0.7)
+            
+            Picker(selection: self.$weatherVM.temperatureUnit, label: Text("Select a Unit")) {
+                ForEach(TemperatureUnit.allCases, id: \.self) { unit in
+                    Text(unit.title)
+                }
+            }.pickerStyle(SegmentedPickerStyle())
+            
         }
         .padding()
         .frame(width:300, height: 150)

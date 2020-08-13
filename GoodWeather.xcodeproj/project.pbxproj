@@ -18,6 +18,7 @@
 		8D1FD42E24E36D5F003F4D6A /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1FD42D24E36D5F003F4D6A /* URL+Extensions.swift */; };
 		8D1FD43124E36E6F003F4D6A /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1FD43024E36E6F003F4D6A /* WeatherViewModel.swift */; };
 		8D1FD43324E498E5003F4D6A /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1FD43224E498E5003F4D6A /* String+Extensions.swift */; };
+		8D344A1024E5C9770060E9CA /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D344A0F24E5C9770060E9CA /* Double+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		8D1FD42D24E36D5F003F4D6A /* URL+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
 		8D1FD43024E36E6F003F4D6A /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		8D1FD43224E498E5003F4D6A /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		8D344A0F24E5C9770060E9CA /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			children = (
 				8D1FD42D24E36D5F003F4D6A /* URL+Extensions.swift */,
 				8D1FD43224E498E5003F4D6A /* String+Extensions.swift */,
+				8D344A0F24E5C9770060E9CA /* Double+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				8D1FD42B24E36CFA003F4D6A /* WeatherService.swift in Sources */,
 				8D1FD42E24E36D5F003F4D6A /* URL+Extensions.swift in Sources */,
 				8D1FD41324E36B13003F4D6A /* AppDelegate.swift in Sources */,
+				8D344A1024E5C9770060E9CA /* Double+Extensions.swift in Sources */,
 				8D1FD43124E36E6F003F4D6A /* WeatherViewModel.swift in Sources */,
 				8D1FD43324E498E5003F4D6A /* String+Extensions.swift in Sources */,
 				8D1FD41524E36B13003F4D6A /* SceneDelegate.swift in Sources */,
